@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, minimum-scale=1, maximum-scale=1" />
+<title>lib.countdown demo</title>
+<style type="text/css">
+body{
+    font-family: Arial;
+}
+.countdown{
+    padding: 10px;
+}
+.countdown:nth-child(2n+1){
+    background-color: #f0f0f0;
+}
+.countdown span{
+    padding: 5px;
+    margin: 0 2px;
+    color: #fff;
+    background-color: #000;
+}
+
+</style>
+<script type="text/javascript" src="src/countdown.js"></script>
+</head>
+<body>
+<div class="countdown"></div>
+<div class="countdown"></div>
+<div class="countdown"></div>
+<div class="countdown"></div>
+<div class="countdown"></div>
+<div class="countdown"></div>
+<script type="text/javascript">
+var cd1 = lib.countdown({
+    endDate: '2014/12/30 23:00:00',
+    stringFormatter: 'd天 hh小时mm分ss秒',
+    updateElement: document.querySelector('.countdown:nth-child(1)'),
+    onUpdate: function(data){
+        // document.querySelector('.countdown:nth-child(1)').innerHTML = data.stringValue;
+    },
+    onEnd: function(){
+        console.log('cd1 ended');
+    }
+}).start();
+</script>
+
+<script type="text/javascript">
+var cd2 = lib.countdown({
+    endDate: '+3600',
+    stringFormatter: 'hh:mm:ss',
+    onUpdate: function(data){
+        document.querySelector('.countdown:nth-child(2)').innerHTML = data.stringValue;
+    },
+    onEnd: function(){
+        console.log('cd2 ended');
+    }
+}).start();
+</script>
+
+<script type="text/javascript">
+var cd3 = lib.countdown({
+    endDate: 1419951600,
+    stringFormatter: 'h:m:s',
+    interval: 2000,
+    onUpdate: function(data){
+        document.querySelector('.countdown:nth-child(3)').innerHTML = data.stringValue;
+    },
+    onEnd: function(){
+        console.log('cd3 ended');
+    }
+}).start();
+</script>
+
+<script type="text/javascript">
+var cd4 = lib.countdown({
+    endDate: '+30:00',
+    stringFormatter: '<b>mm</b>分<b>ss</b>秒',
+    onUpdate: function(data){
+        document.querySelector('.countdown:nth-child(4)').innerHTML = data.stringValue;
+    },
+    onEnd: function(){
+        console.log('cd4 ended');
+    }
+}).start();
+</script>
+
+<script type="text/javascript">
+var cd5 = lib.countdown({
+    endDate: '+30:00',
+    correctDateOffset: 10*60, //服务端时间比客户端时间快10分钟
+    stringFormatter: '<b>mm</b>分<b>ss</b>秒',
+    onUpdate: function(data){
+        document.querySelector('.countdown:nth-child(5)').innerHTML = data.stringValue;
+    },
+    onEnd: function(){
+        console.log('cd5 ended');
+    }
+}).start();
+</script>
+
+<script type="text/javascript">
+var cd6 = lib.countdown({
+    endDate: '+1:20:13:45',
+    stringFormatter: '<\\span>dd</\\span>:<\\span>hh</\\span>:<\\span>mm</\\span>:<\\span>ss</\\span>',
+    onUpdate: function(data){
+        document.querySelector('.countdown:nth-child(6)').innerHTML = data.stringValue;
+    },
+    onEnd: function(){
+        console.log('cd6 ended');
+    }
+}).start();
+</script>
+
+</body>
+</html>

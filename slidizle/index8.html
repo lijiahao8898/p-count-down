@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<title>jQuery幻灯片插件jQuery.slidizle演示-回调函数_dowebok</title>
+<link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.min.css">
+<style>
+* { margin: 0; padding: 0;}
+ul { list-style-type: none;}
+.dowebok { width: 800px; height: 400px; margin: 0 auto;}
+</style>
+</head>
+
+<body>
+<h1>回调函数</h1>
+
+<div class="dowebok slider--animated" data-slidizle>
+	<ul data-slidizle-content>
+		<li style="background-image: url('img/01.jpg')"></li>
+		<li style="background-image: url('img/02.jpg')"></li>
+		<li style="background-image: url('img/03.jpg')"></li>
+	</ul>
+
+	<div data-slidizle-next>
+		<i class="fa fa-arrow-right"></i>
+	</div>
+	<div data-slidizle-previous>
+		<i class="fa fa-arrow-left"></i>
+	</div>
+
+	<ul data-slidizle-navigation></ul>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.slidizle.js"></script>
+<script>
+$(function() {
+	$('.dowebok').slidizle({
+		loop: true,
+		onInit: function() {
+			alert('初始化完成');
+		},
+		onClick: function() {
+			alert('你点击了幻灯片')
+		},
+		beforeChange: function() {
+			alert('准备切换');
+		},
+		onChange: function() {
+			alert('正在切换');
+		},
+		afterChange: function() {
+			alert('切换完成');
+		}
+	});
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 以下信息与演示无关，可不必理会 -->
+<style>
+body { margin: 0; border-left: 200px solid #ccc;}
+
+h1 { margin: 40px auto; font: 32px "Microsoft Yahei"; text-align: center;}
+
+.menu { position: absolute; left: 0; top: 0; bottom: 0; width: 200px; padding-top: 100px; font-family: Consolas,arial,"宋体"; background-color: #ccc;}
+.menu a { display: block; height: 40px; margin: 0 0 1px 2px; padding-left: 10px; line-height: 40px; font-size: 14px; color: #333; text-decoration: none;}
+.menu a:hover { background-color: #eee;}
+.menu .cur { color: #000; background-color: #fff !important;}
+
+.vad { margin: 50px 0 10px; font-family: Consolas,arial,宋体,sans-serif; text-align:center;}
+.vad a { display: inline-block; height: 36px; line-height: 36px; margin: 0 5px; padding: 0 50px; font-size: 14px; text-align:center; color:#eee; text-decoration: none; background-color: #222;}
+.vad a:hover { color: #fff; background-color: #000;}
+.thead { width: 728px; height: 90px; margin: 0 auto; border-bottom: 40px solid transparent;}
+
+.code { position: relative; margin-top: 100px; padding-top: 41px;}
+.code h3 { position: absolute; top: 0; z-index: 10; width: 100px; height: 40px; font: 16px/40px "Microsoft Yahei"; text-align: center; cursor: pointer;}
+.code .cur { border: 1px solid #f0f0f0; border-bottom: 1px solid #f8f8f8; background-color: #f8f8f8;}
+.code .h31 { left: 0;}
+.code .h32 { left: 102px;}
+.code .h33 { left: 204px;}
+.code .h34 { left: 306px;}
+.code ol { padding: 0;}
+.code { width: 800px; margin-left: auto; margin-right: auto;}
+pre { padding: 15px 0; border: 1px solid #f0f0f0; background-color: #f8f8f8;}
+.f-dn { display: none;}
+</style>
+
+<p class="vad f-dn">
+	<a href="http://www.dowebok.com/" target="_blank">dowebok.com</a>
+	<a href="http://www.dowebok.com/194.html" target="_blank">说 明</a>
+	<a href="http://www.dowebok.com/194.html" target="_blank">下 载</a>
+</p>
+
+<div class="menu">
+	<a href="index.html">1、默认效果</a>
+	<a href="index2.html">2、水平/左右切换</a>
+	<a href="index3.html">3、垂直/上下切换</a>
+	<a href="index4.html">4、循环</a>
+	<a href="index5.html">5、自动播放</a>
+	<a href="index6.html">6、缩略图</a>
+	<a href="index7.html">7、进度条</a>
+	<a class="cur" href="index8.html">8、回调函数</a>
+</div>
+
+</body>
+</html>

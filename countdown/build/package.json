@@ -1,0 +1,27 @@
+{
+  "name": "countdown",
+  "version": "1.0.0",
+  "author": {
+    "name": "zhenglin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.alibaba-inc.com:mtb/lib-countdown.git"
+  },
+  "devDependencies": {
+    "grunt": "0.4.x",
+    "grunt-contrib-uglify ": "~0.2.2",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-depconcat": "~0.2.0",
+    "grunt-contrib-clean": "~0.5.0"
+  },
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "keywords": [
+    "lib",
+    "countdown"
+  ]
+}
